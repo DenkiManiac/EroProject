@@ -15,7 +15,9 @@ We are doing our best to cope up with all the troubles any wide scope-like proje
 Unless your name appears in the collaborators list, ***KEEP YOUR HANDS THE FUCK OFF THIS SHIT*** onegaishimasu.
 Nevertheless, you can still `clone` us to see if we are doing good, but **no** pull requests will be accepted... **so far!**
 
-`git clone https://github.com/DenkiManiac/EroProject`
+~~~
+git clone https://github.com/DenkiManiac/EroProject
+~~~
 
 ---
 
@@ -45,7 +47,7 @@ To `merge` branches with `master`:
 
 ~~~
 git checkout master
-git pull //highly recommended
+git pull #highly recommended
 git merge branch_name
 ~~~
 
@@ -67,9 +69,52 @@ git status
 
 This will check differences between local and `source` repository versions, and will keep track of any modified file since last `commit`.
 
-Changes are associated with an user name. **Whoever fucks it up will have no excuse**. Demo daijoubu, files can always go back to a previous version. 
+Changes are associated with an user name. **Whoever that fucks it up will be spotted**. Demo daijoubu, there are solutions available before shedding your shreds to a pit. 
+
+If you want to **temporarily switch to a different commit**, create a new `branch` from an existing `commit` and work from there:
+
+~~~
+git checkout -b branch_name commit_id
+
+-- you can go back to the original work cheking out the master branch ---
+
+git checkout master
+~~~
+
+Otherwise, if you want to **delete unpublished commits** (only affects to local changes), reset the commits:
+
+~~~
+# If you DON'T have work uncommited that you want to keep
+git reset --hard commit_id
+
+# Else
+git stash
+git reset --hard commit_id
+git stash pop
+~~~
+
+Finally, if you want to **delete published commits**, you must create new commits that overwrite all the changes you have made:
+
+~~~
+# To revert the last N commits
+git revert HEAD~N..HEAD
+
+# To revert a merge commit
+git revert -m 1 merge_commit_id
+
+# Either way, you must commit afterwards
+git commit -m "good explanation of what you have done"
+~~~
+
+To get a `commit` history, run:
+
+~~~
+git log
+~~~
+
+Please, **only use any of these methos if there is no alternative way to solve the problem**.
 
 ---
 
-Either guest or collaborator:
-### Arigatou gozaimasu! ♡♡
+Either guest or collaborator:<br>
+### Yoroshiku onegaishimasu! ♡♡♡
