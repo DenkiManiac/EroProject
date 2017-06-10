@@ -23,6 +23,8 @@ git clone https://github.com/DenkiManiac/EroProject
 
 ### Collaborators:
 
+#### Working with the project
+
 Add this repository as the remote `origin`, if you have not already done so:
 
 ~~~
@@ -68,6 +70,8 @@ git status
 ~~~
 
 This will check differences between local and `source` repository versions, and will keep track of any modified file since last `commit`.
+
+#### When troubles loom
 
 Changes are associated with an user name. **Whoever that fucks it up will be spotted**. Demo daijoubu, there are solutions available before shedding your shreds to a pit. 
 
