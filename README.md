@@ -34,7 +34,7 @@ git remote add origin https://github.com/DenkiManiac/EroProject
 Make sure you `pull` this repository before making any changes. You must also `pull` before trying to `merge` branches. This is in order to avoid as many conflicts as possible. 
 The `master` branch is considered the actual project only. Changes in other branches are considered testing, and will not be part of the development process until merged.
 
-To work with branches:
+To **work with branches**:
 
 ~~~
 git branch branch_name
@@ -45,15 +45,15 @@ git checkout branch_name
 git checkout -b branch_name
 ~~~
 
-To `merge` branches with `master`:
+To **`merge` branches** with `master`:
 
 ~~~
 git checkout master
-git pull #highly recommended
+git pull origin master #highly recommended
 git merge branch_name
 ~~~
 
-Perform every `commit` using the Unreal Engine tool. Unreal keeps track of the files you modify, adding them automatically to the index. Simply finish committing clicking *Source Control > Submit to Source Control...*.
+Perform every **`commit` using the Unreal Engine tool**. Unreal keeps track of the files you modify, adding them automatically to the index. Simply finish committing clicking *Source Control > Submit to Source Control...*.
 <br>If the method above fails, you need to `add` and `commit` changes manually (using bash). To do so:
 
 ~~~
@@ -61,15 +61,21 @@ git add .
 git commit -m "commit message"
 ~~~
 
-Pleas provide a descritive message for every `commit` you make, no matter the way you make it.
+Pleas provide a **descritive message** for every `commit` you make, no matter the way you make it.
 
-To keep track of the repository `status` manually:
+This only applies changes to the local repository. To **upload changes to *GitHub***, perform a `push` action:
+
+~~~
+git push origin master
+~~~
+
+If you, anyhow, need to keep track of the repository `status` manually:
 
 ~~~
 git status
 ~~~
 
-This will check differences between local and `source` repository versions, and will keep track of any modified file since last `commit`.
+This will check differences between local and `source` repository versions, and will keep track of any modified file since last `commit`. 
 
 #### When troubles loom
 
