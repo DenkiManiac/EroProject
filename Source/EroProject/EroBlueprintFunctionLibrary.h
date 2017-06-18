@@ -14,11 +14,11 @@ class EROPROJECT_API UEroBlueprintFunctionLibrary : public UBlueprintFunctionLib
 {
 	GENERATED_BODY()
 	
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Cargar fichero", Keywords = "Abrir Script Juego"), Category = Game)
-		static TArray<FString> AbrirFichero(FString ruta);
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Cargar fichero", Keywords = "Abrir Script Fichero"), Category = Game)
+		static TArray<FString> CargarFichero(FString fichero);
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Guardar preferencias", Keywords = "Guardar Preferencias Juego"), Category = Game)
-		static void GuardarPreferencias(TArray<int32> parametros);
+		static void GuardarPreferencias(TArray<FString> parametros);
 	
 	
 };

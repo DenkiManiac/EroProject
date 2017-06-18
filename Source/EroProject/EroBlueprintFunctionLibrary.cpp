@@ -3,14 +3,17 @@
 #include "EroBlueprintFunctionLibrary.h"
 #include "FileManager.h"
 #include "PlatformFilemanager.h"
+#include "Paths.h"
 #include "FileHelper.h"
 #include "EroProject.h"
 
 
-TArray<FString> UEroBlueprintFunctionLibrary::AbrirFichero(FString r)
+TArray<FString> UEroBlueprintFunctionLibrary::CargarFichero(FString f)
 {
 	TArray<FString> texto[500];
-	const TCHAR* ruta = *r;
+	FString ContentPath = FPaths::GameContentDir();
+	FString path = ContentPath + FString("Files/") + f;
+	const TCHAR* ruta = *path;
 	IFileManager* FileManager = &IFileManager::Get();
 	// Read and parse the file, adding the pawns and their sounds to the list
 	FArchive* TextFile = FileManager->CreateFileReader(ruta, 0);
@@ -71,11 +74,11 @@ TArray<FString> UEroBlueprintFunctionLibrary::AbrirFichero(FString r)
 	return *texto;
 }
 
-void UEroBlueprintFunctionLibrary::GuardarPreferencias(TArray<int32> parametros)
+void UEroBlueprintFunctionLibrary::GuardarPreferencias(TArray<FString> parametros)
 {
-	FString SaveDirectory = FString("D:");
-	FString FileName = FString("preferences.jst");
-	FString TextToSave = FString("ssssshtupenda");
+	FString ContentPath = FPaths::GameContentDir();
+	FString SaveDirectory = ContentPath + FString("Files");
+	FString FileName = FString("preferences");
 	bool AllowOverwriting = true;
 
 	IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
@@ -91,15 +94,13 @@ void UEroBlueprintFunctionLibrary::GuardarPreferencias(TArray<int32> parametros)
 		// Allow overwriting or file doesn't already exist
 		if (AllowOverwriting || !PlatformFile.FileExists(*AbsoluteFilePath))
 		{
-			int i = 0;
-			FString string = "";
-			char* buf = NULL;
-			for (i = 0; i < sizeof(parametros); i++) {
-				itoa(parametros[i], buf, 10);
-				string += buf;
-				string += "\n";
+			FString s = "";
+			for (int i = 0; i < parametros.Num(); i++) {
+				s += parametros[i];
+				if (parametros.Num() - i > 1)
+					s += "\n";
 			}
-			FFileHelper::SaveStringToFile(string, *AbsoluteFilePath);
+			FFileHelper::SaveStringToFile(s, *AbsoluteFilePath);
 			//FFileHelper::SaveArrayToFile(parametros, *AbsoluteFilePath);
 		}
 	}
