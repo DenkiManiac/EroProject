@@ -1,5 +1,6 @@
 ﻿//Script de prueba
 "Shinki" "Soy un diálogo."
+MOVECAMERA(0,0,100,0,-45,45)
 "" "Y yo un soliloquio (estoy hablando conmigo mismo)."
 "Inoue" "Y en principio el texto está saliendo poco a poco."
 "Shinki" "¿Cómo puede ser eso? Magia quizás..."
