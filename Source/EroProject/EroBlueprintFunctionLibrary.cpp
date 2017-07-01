@@ -10,7 +10,7 @@
 
 TArray<FString> UEroBlueprintFunctionLibrary::CargarFichero(FString f)
 {
-	TArray<FString> texto[500];
+	TArray<FString> texto[1000];
 	FString ContentPath = FPaths::GameContentDir();
 	FString path = ContentPath + FString("Files/") + f;
 	const TCHAR* ruta = *path;

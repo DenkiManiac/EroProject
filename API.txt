@@ -1,0 +1,28 @@
+MOVECAMERA(X_POS, Y_POS, Z_POS, X_ROT, Y_ROT, Z_ROT)
+Moves player camera to position (X_POS, Y_POS, Z_POS) with angle vector (X_ROT, Y_ROT, Z_ROT).
+
+CAMERASHAKE(MODE, AMOUNT)
+Shakes the camera according to a pattern defined by MODE with AMOUNT amplitude (grater than 0). 
+MODE=HIT shakes the camera in a semi-random way.
+MODE=YES shakes the camera imitating a nod movement.
+MODE=NO shakes the camera imitating a rejection movement.
+The more amplitude is given, the more violent the shake will be.
+
+FADE(MODE, R, G, B, ALPHA, DURATION)
+Fades wether in (MODE=IN) or out (MODE=OUT) the camera view with color (R, G, B) and transparency ALPHA in DURATION seconds.
+When MODE=OUT, the screen fades TO color and alpha represented by R, G, B and ALPHA parameters.
+When MODE=IN, the screend fades FROM color and alpha represented by R, G, B and ALPHA parameters.
+
+FLASH(R, G, B, ALPHA, DURATION)
+Flashes the screen with color (R, G, B) and transparency ALPHA for DURATION seconds.
+
+COLOR(R, G, B, ALPHA)
+Paints the screen with color (R, G, B) and transparency ALPHA.
+
+DIALOG(ACTION)
+Shows (ACTION=SHOW) or hides (ACTION=HIDE) the dialog box.
+If dialog is already shown, ACTION=SHOW will not have any effect.
+If dialog is already hidden, ACTION=HIDE will not have any effect.
+
+SLEEP(DURATION)
+Sleeps for DURATION seconds. This interrupts the script reading flow until DURATION time runs out.

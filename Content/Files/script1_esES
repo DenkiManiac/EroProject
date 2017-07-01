@@ -1,7 +1,46 @@
 ﻿//Script de prueba
-"Shinki" "Soy un diálogo."
-MOVECAMERA(0,0,100,0,-45,45)
-"" "Y yo un soliloquio (estoy hablando conmigo mismo)."
-"Inoue" "Y en principio el texto está saliendo poco a poco."
-"Shinki" "¿Cómo puede ser eso? Magia quizás..."
-"" "Voy a poner un texto tan largo como la verga de Shinki para ver si esto se sale del cuadro o no. Se supone que la siguiente línea debe salir abajo, estamos hablando de un texto tan largo como un puto brazo. Un brazo con un tumor lleno de amor. En serio, vamos a reventar a la loli."
+COLOR(0,0,0,1)
+SLEEP(1)
+FADE(IN,0,0,0,1,1)
+SLEEP(1)
+DIALOG(SHOW)
+"Shinki" "Soy un desgraciado."
+MOVECAMERA(0,0,100,0,45,45)
+"Inoue" "Es verdad. Puto desgraciado."
+
+//Más pruebas
+FADE(OUT,0,0,0,1,0.5)
+SLEEP(0.5)
+"" "En ese momento le puse el rabo en la cara para que supiera quién mandaba aquí."
+"Inoue" "¿Shinki qué haces? ¡No veo nada!"
+"Shinki" "Calla y come."
+DIALOG(HIDE)
+FADE(IN,0,0,0,1,0.5)
+SLEEP(1)
+DIALOG(SHOW)
+"" "Como si supera lo que tenía que hacer, Inoue-sense le dio lo suyo."
+DIALOG(HIDE)
+SLEEP(0.75)
+DIALOG(SHOW)
+"Shinki" "Ah, sensei... si sigues así, yo..."
+"" "Ni puto caso."
+DIALOG(HIDE)
+SLEEP(0.5)
+DIALOG(SHOW)
+"Shinki" "IKUUUUUUUUUUUUUUUUUUUUUUUUU"
+DIALOG(HIDE)
+CAMERASHAKE(HIT,10)
+SLEEP(0.5)
+FLASH(255,255,255,1,0.25)
+SLEEP(1)
+DIALOG(SHOW)
+"Inoue" "Vaya mierda de aguante que tienes. Cómo se nota que eres un desgraciado."
+"Inoue" "Te has aficionado a las tutorías, ¿no es así?"
+CAMERASHAKE(YES,5)
+"Shinki" "Sí, sensei."
+"Inoue" "¿Vas a todas las asignaturas, o solo a la mía?"
+CAMERASHAKE(NO,5)
+"Shinki" "A todas no, solo a esta."
+"Inoue" "Shinki no ecchi..."
+DIALOG(HIDE)
+FADE(OUT,0,0,0,1,1)
